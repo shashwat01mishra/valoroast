@@ -1,0 +1,30 @@
+{
+  "name": "valoroast",
+  "version": "1.0.0",
+  "description": "Valoroast — Personalized Valorant Roast Engine & Card Generator",
+  "main": "server/index.js",
+  "type": "module",
+  "scripts": {
+    "dev:server": "node server/index.js",
+    "dev:client": "vite",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node server/testPipeline.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "html2canvas": "^1.4.1",
+    "lucide-react": "^0.378.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.0",
+    "concurrently": "^8.2.2",
+    "vite": "^5.2.11"
+  }
+}

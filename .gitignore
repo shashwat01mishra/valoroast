@@ -1,0 +1,12 @@
+# Valoroast Privacy & Ignore
+node_modules/
+dist/
+.env
+local/profiles/
+*.sqlite
+*.db
+.DS_Store
+
+# Runtime-generated data, not source
+server/wallOfShame.json
+server/diagnostic_*_dump.json
