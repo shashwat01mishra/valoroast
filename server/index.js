@@ -53,6 +53,7 @@ if (loadedEnvPath) {
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+const VALID_MODES = ['competitive', 'unrated', 'tdm', 'deathmatch', 'all'];
 
 app.use(cors());
 app.use(express.json());
@@ -98,8 +99,8 @@ app.get('/api/roast/:region/:name/:tag', async (req, res) => {
     const { region, name, tag } = req.params;
     let { intensity = 'spicy', variantSeed = 0, apiKey = null, act = 'e9a2', mode = 'competitive', style = 'classic' } = req.query;
 
-    if (!mode || (mode !== 'competitive' && mode !== 'unrated')) {
-      return res.status(400).json({ error: 'Mode must be competitive or unrated.' });
+    if (!VALID_MODES.includes(mode)) {
+      return res.status(400).json({ error: `Mode must be one of: ${VALID_MODES.join(', ')}.` });
     }
 
     const userApiKey = req.headers['x-api-key'] || apiKey;
